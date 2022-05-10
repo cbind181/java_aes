@@ -27,7 +27,7 @@ public class JEncrytion {
             long bestEncryptTime = 999999999;
             long bestDecryptTime = 999999999;
 
-            Path fileName = Path.of("/home/calen/463//Project/small.txt");
+            Path fileName = Path.of("/home/User/463//Project/small.txt");
 
             // Now calling Files.readString() method to
             // read the file
