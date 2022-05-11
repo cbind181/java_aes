@@ -26,10 +26,10 @@ public class JEncrytion {
         try {
             long bestEncryptTime = 999999999;
             long bestDecryptTime = 999999999;
-
+            
+            // file for to be encrypted and decrypted
             Path fileName = Path.of("/home/calen/463/Project/small.txt");
 
-            // Now calling Files.readString() method to
             // read the file
             String str = Files.readString(fileName);
 
@@ -47,30 +47,30 @@ public class JEncrytion {
 
                 // Create the cipher
                 aesCipher = Cipher.getInstance("AES/cbc/PKCS5Padding");
-
-                // Initialize the cipher for encryption
-
-                // sensitive information
-
-                // System.out.println("Plain Text [Byte Format] : " + text);
-
+                // time the ecncrtion 
                 long startTime = System.currentTimeMillis();
+                
+                //make an IV
                 SecureRandom randomSecureRandom = new SecureRandom();
                 byte[] iv = new byte[aesCipher.getBlockSize()];
                 randomSecureRandom.nextBytes(iv);
                 IvParameterSpec ivParams = new IvParameterSpec(iv);
                 aesCipher.init(Cipher.ENCRYPT_MODE, myDesKey);
+                //encrypt the text
                 byte[] textEncrypted = aesCipher.doFinal(text);
                 long endTime = System.currentTimeMillis();
                 long encryptTime = (endTime - startTime);
+                
+                // check if it is best time yet
                 System.out.println("That took encrypt " + encryptTime + " milliseconds");
                 if (encryptTime < bestEncryptTime) {
                     bestEncryptTime = encryptTime;
                 }
 
-                // decrypt
+                // time decryption
                 startTime = System.currentTimeMillis();
                 aesCipher.init(Cipher.DECRYPT_MODE, myDesKey, ivParams);
+                // decryption
                 aesCipher.doFinal(textEncrypted);
                 endTime = System.currentTimeMillis();
                 long decryptTime = (endTime - startTime);
@@ -85,6 +85,7 @@ public class JEncrytion {
             System.out.println("best encrypt: " + String.valueOf(bestEncryptTime));
             System.out.println("best decrypt: " + String.valueOf(bestDecryptTime));
 
+            //catch errors
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         } catch (NoSuchPaddingException e) {
