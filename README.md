@@ -9,6 +9,6 @@ Upon running the program, be patient and allow it a few seconds to complete its 
 In order to run this program, you will need to have Java 11 JDK (version 11.0.15 or later) installed. You can follow the installation instructions [here](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html). The project was built and ran on Linux, so that is what the rest of the guide will reference for execution.
 
 ## Compilation and Execution
-In order to run the program, you first must navigate to the project folder and edit the `JEncryption.java` file to use the correct file path to run the encryption and decryption processes on. Replace the file path with the **full path** to your file in the `fileName` variable on line 30. Be sure to save the file upon making your changes.
+In order to run the program, you first must navigate to the project folder and edit the `JEncryption.java` file to use the correct file path to run the encryption and decryption processes on. Replace the file path with the **full path** to your file in the `fileName` variable on line 31. Be sure to save the file upon making your changes.
 <br><br>
 Finally, execute the program by running `java -Xmx8G JEncryption.java` in the terminal.
