@@ -27,7 +27,7 @@ public class JEncrytion {
             long bestEncryptTime = 999999999;
             long bestDecryptTime = 999999999;
 
-            Path fileName = Path.of("/home/User/463//Project/small.txt");
+            Path fileName = Path.of("/home/calen/463/Project/small.txt");
 
             // Now calling Files.readString() method to
             // read the file
@@ -54,13 +54,11 @@ public class JEncrytion {
 
                 // System.out.println("Plain Text [Byte Format] : " + text);
 
+                long startTime = System.currentTimeMillis();
                 SecureRandom randomSecureRandom = new SecureRandom();
                 byte[] iv = new byte[aesCipher.getBlockSize()];
                 randomSecureRandom.nextBytes(iv);
                 IvParameterSpec ivParams = new IvParameterSpec(iv);
-
-                // encrypt
-                long startTime = System.currentTimeMillis();
                 aesCipher.init(Cipher.ENCRYPT_MODE, myDesKey);
                 byte[] textEncrypted = aesCipher.doFinal(text);
                 long endTime = System.currentTimeMillis();
