@@ -1,6 +1,6 @@
 // Code borrowed from
 // https://mkyong.com/java/jce-encryption-data-encryption-standard-aes-tutorial
-// Changes made by Byrav Ramamurthy 
+// Changes made by Calen Olsen, Cody Binder
 
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
